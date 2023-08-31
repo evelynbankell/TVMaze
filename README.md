@@ -26,3 +26,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## TODO (if more time exists)
+
+- Sort search results on the weight parameter
+- Structure and clean up the scss files
+- Fix the stars to have "half stars" in the rating
+- Fix the CSS so the search box on the front page doesn't need to have some extra padding - related to search-box.component.ts line 24
+- Add tests
