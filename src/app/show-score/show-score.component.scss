@@ -1,0 +1,22 @@
+.crop {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stars {
+    display: flex;
+    padding: .5rem 0;
+}
+
+  .fa-star:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f005";
+    display: inline-block;
+    padding-right: 3px;
+    font-weight: 900;
+    color: white;
+ }
+
+ span.filled.fa-star:before {
+    color:orange;
+ }

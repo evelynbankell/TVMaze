@@ -1,0 +1,9 @@
+<div class="crop">
+  <div *ngFor='let in of counter(integerStars); let i = index' class="stars">
+    <span *ngIf="i < score || score == i" class="fa-solid fa-star filled"></span>
+  </div>
+  <div *ngFor='let in of counter(leftStars); let i = index' class="stars">
+    <span class="fa-solid fa-star"></span>
+  </div>
+</div>
+

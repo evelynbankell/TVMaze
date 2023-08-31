@@ -1,0 +1,18 @@
+<div class="container">
+    <search-box></search-box>
+</div>
+<div class="container flex-grid">
+    <div *ngFor="let result of searchResult" class="col">
+        <div class="show" (click)="getShow(result)">
+            <div *ngIf="result.show.image; else showBlankImg">
+                <img [src]="result.show.image.medium" />
+            </div>
+            <ng-template #showBlankImg>
+                <img src="../../assets/no-show-img.png" />
+            </ng-template>
+            <p>{{ result.show.name}}</p>
+            <show-score [score]="result.score" [resultPage]="true"></show-score>
+        </div>
+    </div>
+    <h2 *ngIf="!hasResults">No results</h2>
+</div>

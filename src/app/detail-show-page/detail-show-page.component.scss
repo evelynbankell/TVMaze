@@ -1,0 +1,112 @@
+@use './../../variables';
+
+h2 {
+    margin-top: 0;
+}
+span, p {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.back-link {
+    font-weight: 700;
+    color: white;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+.display-flex {
+    display: flex;
+    margin-top: 4rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    @media only screen and (max-width: variables.$md) {
+        flex-direction: row-reverse;
+    }
+    @media only screen and (max-width: variables.$xs) {
+        flex-direction: column;
+    }
+    &.justify-content-right {
+        justify-content: flex-end;
+        margin-left: 2rem;
+        @media only screen and (max-width: variables.$md) {
+            margin-left: 0;
+            justify-content: flex-start;    
+        }
+    } 
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    //padding: 0 1rem;
+
+    &.image {
+        flex-basis: 25%;
+
+        .show-img {
+            max-width: 200px;
+            min-width: 100px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &.info {
+        flex-basis: 75%;
+    }
+
+    &.cast {
+        flex-basis: 75%;
+
+        @media only screen and (max-width: variables.$md) {
+            flex-basis: 100%;
+        }
+    }
+}
+
+.genres {
+    display: flex;
+    gap: .5rem;
+}
+
+.cast-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    gap: 1rem;
+
+    @media only screen and (max-width: variables.$xs) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cast {
+        display: flex;
+        gap: 1rem;
+        .cast-img {
+            max-width: 100px;
+            min-width: 30px;
+            @media only screen and (max-width: variables.$md) {
+                max-width: 60px;
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .cast-info {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            padding-top: 1rem;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+<div class="container">
+    <div>
+        <search-box></search-box>
+    </div>
+    <div class="back-link" *ngIf="data" (click)="back()">
+        <p>Back to search results</p>
+    </div>
+    
+    <div class="display-flex" *ngIf="data">
+        <div class="row">
+            <div class="col image">
+                <div *ngIf="data.image.medium" class="show-img">
+                    <img [src]="data.image.medium" />
+                </div>
+                
+            </div>
+            <div class="col info">
+                <h2>{{ data.name }} </h2>
+                <div *ngIf="data.rating.average">
+                    <show-score [score]="data.rating.average"></show-score>
+                </div>
+                
+                <div *ngIf="data.genres && data.genres.length" class="genres">
+                    <strong>Genres:</strong>
+                    <div *ngFor="let genre of data.genres">
+                        <span>
+                            {{ genre }}
+                        </span>
+                    </div>
+                </div>
+                <div *ngIf="data.summary">
+                    <div class="p" [innerHTML]="data.summary">
+                    </div>
+                </div>
+            </div> 
+        </div>
+        
+    </div>
+    <div *ngIf="data" class="row justify-content-right">
+        <div class="col cast" *ngIf="data._embedded && data._embedded.cast.length">
+            <h3>Cast</h3>
+            <div class="cast-container">
+                <div *ngFor="let cast of data._embedded.cast" class="cast">
+                    <div *ngIf="cast.character.image && cast.character.image.medium; else personImg" class="cast-img">
+                        <img [src]="cast.character.image.medium" />
+                    </div>
+                    <ng-template #personImg >
+                        <div *ngIf="cast.person.image && cast.person.image.medium" class="cast-img" >
+                            <img [src]="cast.person.image.medium" />
+                        </div>
+                        
+                    </ng-template>
+                    <div class="cast-info">
+                        <span>
+                            {{ cast.person.name }}
+                        </span>
+                        <span>
+                            as {{ cast.character.name }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="search-container">
+    <div class="logo-container" [routerLink]="['/']">
+        <img src="../../assets/logo.svg" alt="logo"/>
+    </div>
+
+    <div class="search">
+        <input type="search" placeholder="Search for TV shows" id="searchId">
+        <button class="btn-primary" (click)="searchShow()" [ngClass]="{'front-page': frontPage}">Search</button>
+    </div>
+</div>
+<div *ngIf="!hasSearchWord">
+    <h2>Type something to search</h2>
+</div>
