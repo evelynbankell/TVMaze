@@ -1,6 +1,7 @@
 # TVmazeProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+To install angular/cli run: npm install -g @angular/cli
 
 ## Development server
 
